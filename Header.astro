@@ -1,0 +1,42 @@
+---
+import '../style/navegador.css';
+---
+<script>
+const btn: any = document.querySelector(".btn-toggle");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+btn.addEventListener("change", function () {
+  if (prefersDarkScheme.matches) {
+    document.body.classList.toggle("light-theme");
+  } else {
+    document.body.classList.toggle("dark-theme");
+  }
+}); 
+</script>
+
+<header>
+  <div class="nav-bar">
+    <nav>
+      <a class="b-nav dark-nav" href="#home">
+        Home
+      </a>
+      <a class="b-nav dark-nav" href="#sobremi">
+        Sobre mí
+      </a>
+      <a class="b-nav dark-nav" href="#proyectos">
+      Proyectos
+      </a>
+      <a class="b-nav dark-nav" href="Pensamientos.astro">
+        Pensamientos
+      </a>
+      <a class="b-nav dark-nav" href="#contacto">
+        Contacto
+      </a>
+      <span></span>
+    </nav>
+    <label class="switch btn-toggle">
+      <input type="checkbox">
+      <span class="slider"></span>
+    </label>
+  </div>
+</header>

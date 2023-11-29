@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Main from '../components/Footer.astro';
+---
+
+<Layout title="Josué Dorante">
+    <main>
+        <div class="inner">
+            <div class="home-inner">
+                <h1 class="home-title">
+                    Hago sitios web.
+                </h1>
+                <p class="pre-home-title">
+                    ¡Hola!, me llamo Josué Dorante
+                </p>
+                <div class="home-content">
+                    <p>
+                        Soy <strong>desarrollador front-end</strong> autodidacta y un lector empedernido.<br class="home-br"/> Abierto a nuevas perspectivas, ansioso de sumarme a proyectos desafiantes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <style>
+    .inner {
+        display: flex;
+        flex: 1 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 0 4rem
+    }
+    
+    @media (min-width: 940px) {
+        .inner {
+            min-height:500px
+        }
+    }
+    .home-inner {
+        display: flex;
+        flex-direction: column
+    }
+    
+    .home-title {
+        font-size: 2.5rem;
+        line-height: 1;
+        margin-bottom: .33em
+    }
+    
+    @media (min-width: 670px) {
+        .home-title {
+            font-size:5.875rem
+        }
+    }
+    
+    .pre-home-title {
+        order: -1;
+        font-size: 1.1875rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 1rem
+    }
+    
+    .home-content {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1.4
+    }
+    
+    @media (min-width: 670px) {
+        .home-content {
+            font-size:2rem
+        }
+    }
+    
+    .home-br {
+        display: none
+    }
+    
+    @media (min-width: 1260px) {
+        .home-br {
+            display:block
+        }
+    }
+    
+    .hero__link {
+        display: inline-block;
+        color: var(--color-text)!important;
+        position: relative
+    }
+    
+    .hero__link::after,.hero__link::before {
+        content: "";
+        display: block;
+        height: .5em;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1
+    }
+    
+    .hero__link::before {
+        background-color: var(--color-border)
+    }
+    
+    .hero__link::after {
+        background-color: var(--color-primary);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition: transform .3s cubic-bezier(.86, 0, .07, 1)
+    }
+    
+    .hero__link:hover::after {
+        transform: scaleX(1)
+    }
+    
+    .hero__link--codista::after {
+        background-color: #26ffae
+    }
+    
+    .hero__link--twitter::after {
+        background-color: #1da1f2
+    }
+    
+    .hero__link--mastodon::after {
+        background-color: #595aff
+    }
+    </style>
+    
+    
